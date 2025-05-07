@@ -1,3 +1,4 @@
+```
 📦 project-root/
  ┣ 📜 index.html
  ┣ 📁 styles/
@@ -23,3 +24,4 @@
  ┣ 📜 NOTICE
  ┣ 📜 CODE_OF_CONDUCT.md
  ┣ 📜 README.md
+```
