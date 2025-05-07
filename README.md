@@ -4,7 +4,7 @@
     <img alt="Code License" src="https://img.shields.io/badge/Release_Version-V1.0.0-green" style="display: inline-block; vertical-align: middle;"/>
   </a>
   <a href="https://github.com/x47base/ch-finance-engine/blob/main/LICENSE" style="margin: 2px;">
-    <img alt="Code License" src="https://img.shields.io/badge/Code_License-modified_GPL_v3_License-blue" style="display: inline-block; vertical-align: middle;"/>
+    <img alt="Code License" src="https://img.shields.io/badge/Code_License-GPL_v3_License-blue" style="display: inline-block; vertical-align: middle;"/>
   </a>
 </div>
 
