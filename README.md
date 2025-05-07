@@ -1,27 +1,60 @@
+
+<div align="center" style="line-height: 1;">
+  <a href="https://github.com/x47base/ch-finance-engine/" style="margin: 2px;">
+    <img alt="Code License" src="https://img.shields.io/badge/Release_Version-V1.0.0-green" style="display: inline-block; vertical-align: middle;"/>
+  </a>
+  <a href="https://github.com/x47base/ch-finance-engine/blob/main/LICENSE" style="margin: 2px;">
+    <img alt="Code License" src="https://img.shields.io/badge/Code_License-modified_GPL_v3_License-blue" style="display: inline-block; vertical-align: middle;"/>
+  </a>
+</div>
+
+---
+
+# FreeDB
+
+## Table of Contents
+1. [Install Package](#install-package)  
+2. [Projectstructure](#projectstructure)  
+4. [Documentation](#documentation)  
+5. [License](#license)  
+
+---
+
+## Install Package
+
+WIP
+
+---
+
+## Projectstructure
+
 ```
 📦 project-root/
  ┣ 📜 index.html
- ┣ 📁 styles/
- ┃ ┣ 📜 index.css
- ┃ ┣ 📜 basic.css
- ┃ ┣ 📜 connection.css
- ┣ 📁 javascript/
- ┃ ┣ 📜 burger.js
- ┃ ┣ 📜 checkUserInput.js
- ┃ ┣ 📜 clock.js
- ┃ ┣ 📜 filter.js
- ┃ ┣ 📜 geoposition.js
- ┃ ┣ 📜 index.js
- ┃ ┣ 📜 request.js
- ┃ ┣ 📜 sbb-Uhr-1.3.js
- ┃ ┣ 📜 scroll.js
- ┃ ┣ 📜 settings.js
- ┃ ┣ 📜 visualize.js
- ┣ 📁 images/
- ┃ ┗ 📄 ... (alle Bilddateien, z.B. Zugbilder, Linien-SVGs)
+ ┣ 📁 docs/
+ ┃ ┣ 📜 README.md
+ ┣ 📁 freedb/
+ ┃ ┣ 📜 __main__.py
+ ┃ ┣ 📁 commands/
+ ┃ ┃ ┣ 📜 create.py
+ ┃ ┃ ┣ 📜 delete.py
+ ┃ ┃ ┣ 📜 read.py
+ ┃ ┃ ┣ 📜 update.py
+ ┃ ┣ 📜 utils.py
  ┣ 📜 .gitignore
  ┣ 📜 LICENSE
  ┣ 📜 NOTICE
- ┣ 📜 CODE_OF_CONDUCT.md
  ┣ 📜 README.md
 ```
+
+---
+
+## Documentation
+
+[Link to Documentation](docs/README.md)
+
+---
+
+## License
+
+This project is licensed under a [GPL-v3 license](LICENSE).
