@@ -1,12 +1,7 @@
 import sys
-<<<<<<< HEAD
 
 from .state import set_curent_data_path, get_current_data_path, get_current_db, get_current_db_path
-from .commands import config_data_path, create_table, drop_table, delete_query, read, update, use
-=======
-from .commands import create_table, create_database, insert, delete, read, update, use
-
->>>>>>> 5313faf16d43237cef23d1f37ffe1a9d8bc6ac99
+from .commands import config_data_path, create_table, create_database, insert, drop_table, delete_query, read, update, use
 
 def main():
     if len(sys.argv) < 2:
@@ -16,13 +11,9 @@ def main():
     command = sys.argv[1].lower()
     arg2 = sys.argv[2].lower()
     commands = {
-<<<<<<< HEAD
         "config": {
             "path": lambda: config_data_path(sys.argv[3])
         },
-=======
-        "insert": insert,
->>>>>>> 5313faf16d43237cef23d1f37ffe1a9d8bc6ac99
         "create": {
             # name is the next arg
             "table": lambda: create_table(sys.argv[3]) if len(sys.argv) > 3 else print("Missing table name."),
@@ -32,6 +23,7 @@ def main():
             "table": lambda: drop_table(arg2),
             "query": lambda: delete_query(*sys.argv[2:]),
         },
+        "insert": insert,
         "read": read,
         "update": update,
         "use": lambda: use(sys.argv[2], None if len(sys.argv) <= 3 else sys.argv[3]),
