@@ -1,15 +1,5 @@
 import os
-from ..state import set_current_db, get_current_db, get_current_db_path, set_curent_data_path
-
-BASE_DIR = ""
-
-if get_current_db_path() is None:
-    BASE_DIR = os.path.abspath(os.path.join(os.getcwd(), "data"))
-    set_curent_data_path(BASE_DIR)
-    print("Default data directory set to:", BASE_DIR)
-else:
-    BASE_DIR = os.path.abspath(get_current_db_path())
-    
+from ..state import set_current_db, get_current_data_path, set_curent_data_path
 
 def use(db_name, data_dir: str = None):
     """Set the current database to the specified name."""
@@ -18,7 +8,7 @@ def use(db_name, data_dir: str = None):
         set_curent_data_path(data_dir)
         base = data_dir
     else:
-        base = BASE_DIR
+        base = get_current_data_path() or os.path.abspath(os.path.join(os.getcwd(), "data"))  # Ensure base is initialized
 
     db_path = os.path.join(base, db_name)
 
@@ -26,7 +16,7 @@ def use(db_name, data_dir: str = None):
         print(f"Database '{db_name}' not found at {db_path}")
         return
 
-    set_current_db(db_name, db_path)
+    set_current_db(db_name)
     print(f"Switched to database: {db_name} (Location: {db_path})")
 
 if __name__ == "__main__":
