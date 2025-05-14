@@ -30,7 +30,7 @@ def main():
         },
         "delete": {
             "table": lambda: drop_table(arg2),
-            "query": lambda: delete_query(*sys.argv[2:(len(sys.argv)-1)]),
+            "query": lambda: delete_query(*sys.argv[2:]),
         },
         "read": read,
         "update": update,
