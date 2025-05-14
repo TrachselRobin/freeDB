@@ -21,12 +21,9 @@ def drop_table(table_name):
 
 def delete_query(table_name, field, value):
     db_path = get_current_db_path()
-    original_file = get_current_db() + f'.{table_name}.csv'
-    file_path = f'{db_path}\\{original_file}'
+    file_name = get_current_db() + f'.{table_name}.csv'
+    file_path = f'{db_path}\\{file_name}'
     temp_file = get_current_db() + f".{table_name}.tmp"
-    print(original_file)
-    print(file_path)
-    print(temp_file)
 
     if not os.path.exists(file_path):
         print(f"Tabelle '{table_name}' existiert nicht.")

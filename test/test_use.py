@@ -7,7 +7,6 @@ def test_use_output(capsys):
     db_folder = data_dir / "test"
     db_folder.mkdir()
     db.use("test", data_dir=str(data_dir))
-    db.drop_table("testDatabase.users.csv")
 
 if __name__ == "__main__":
     test_use_output()
