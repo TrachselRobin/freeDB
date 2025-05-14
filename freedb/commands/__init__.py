@@ -1,4 +1,4 @@
-from .create import create_table
+from .create import create_table, insert
 from .delete import delete
 from .read import read
 from .update import update
