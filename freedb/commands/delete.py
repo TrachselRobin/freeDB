@@ -31,7 +31,7 @@ def delete_query(table_name, field, value):
 
     with open(file_path, 'r') as infile, open(temp_file, 'w') as outfile:
         lines = infile.readlines()
-        header = lines[0].strip().split(',')
+        header = lines[0].strip().split(';')
 
         if field not in header:
             print(f"Fehler: Spalte '{field}' existiert nicht in '{table_name}'.")
@@ -41,7 +41,7 @@ def delete_query(table_name, field, value):
         outfile.write(lines[0])
         removed = 0
         for line in lines[1:]:
-            row = line.strip().split(',')
+            row = line.strip().split(';')
             if row[col_index] != value:
                 outfile.write(line)
             else:
