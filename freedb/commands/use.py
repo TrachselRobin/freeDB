@@ -3,8 +3,10 @@ from ..state import set_current_db, get_current_db
 
 BASE_DIR = os.path.abspath(os.path.join(os.getcwd(), "data"))
 
-def use(db_name):
+def use(db_name, data_dir: str = None):
     """Set the current database to the specified name."""
+    if data_dir is not None:
+        BASE_DIR = os.path.abspath(data_dir)
     db_path = os.path.join(BASE_DIR, f"{db_name}")
     
     if not os.path.exists(db_path):
