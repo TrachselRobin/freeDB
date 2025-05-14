@@ -1,6 +1,5 @@
-# FREEDB/main__.py
 import sys
-from .commands import create, delete, read, update
+from .commands import create, delete, read, update, use
 
 def main():
     if len(sys.argv) < 2:
@@ -12,7 +11,8 @@ def main():
         "create": create,
         "delete": delete,
         "read": read,
-        "update": update
+        "update": update,
+        "use": lambda: use(sys.argv[2])
     }
     
     if command in commands:

@@ -1,4 +1,3 @@
-
 def create():
     print("Creating a new database entry...")
 

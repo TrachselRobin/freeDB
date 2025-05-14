@@ -5,6 +5,7 @@ setup.py
 freedb/__init__.py
 freedb/__main__.py
 freedb/database.py
+freedb/state.py
 freedb.egg-info/PKG-INFO
 freedb.egg-info/SOURCES.txt
 freedb.egg-info/dependency_links.txt
@@ -14,3 +15,4 @@ freedb/commands/create.py
 freedb/commands/delete.py
 freedb/commands/read.py
 freedb/commands/update.py
+freedb/commands/use.py

@@ -1,3 +1,5 @@
-
 def update():
-    pass
+    print("Update a database entry...")
+
+if __name__ == "__main__":
+    update()

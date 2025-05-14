@@ -1,3 +1,5 @@
-
 def delete():
-    pass
+    print("Deleting a database entry...")
+
+if __name__ == "__main__":
+    delete()
