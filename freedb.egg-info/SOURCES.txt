@@ -11,9 +11,11 @@ freedb.egg-info/SOURCES.txt
 freedb.egg-info/dependency_links.txt
 freedb.egg-info/top_level.txt
 freedb/commands/__init__.py
+freedb/commands/config.py
 freedb/commands/create.py
 freedb/commands/delete.py
 freedb/commands/read.py
 freedb/commands/update.py
 freedb/commands/use.py
+test/test_config.py
 test/test_use.py
