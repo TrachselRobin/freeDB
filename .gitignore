@@ -1,0 +1,13 @@
+build/
+.vscode/
+freedb.egg-info/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite
+*.egg
+*.egg-info
+*.whl
+*.log
