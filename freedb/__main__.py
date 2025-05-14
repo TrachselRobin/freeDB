@@ -1,5 +1,5 @@
 import sys
-from .commands import create_table, delete, read, update, use
+from .commands import create_table, drop_table, read, update, use
 
 def main():
     if len(sys.argv) < 2:
@@ -12,10 +12,12 @@ def main():
         "create": {
             "table": create_table,
         },
-        "delete": delete,
+        "delete": {
+            "table": lambda: drop_table(arg2),
+        },
         "read": read,
         "update": update,
-        "use": lambda: use(sys.argv[2], None if sys.argv[3] is None else sys.argv[3])
+        "use": lambda: use(arg2, None if sys.argv[3] is None else sys.argv[3])
     }
 
     if command in commands:

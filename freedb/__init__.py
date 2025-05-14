@@ -1,1 +1,1 @@
-from .commands import create_table, delete, read, update, use
+from .commands import create_table, drop_table, read, update, use
