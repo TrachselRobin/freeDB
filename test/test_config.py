@@ -1,5 +1,6 @@
 # test/test_config.py
 import freedb as db
+import pytest
 
 def test_config(capsys, tmp_path):
     data_dir = tmp_path / "temp_data"

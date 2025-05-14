@@ -1,12 +1,7 @@
 import sys
-<<<<<<< HEAD
 
 from .state import set_curent_data_path, get_current_data_path, get_current_db, get_current_db_path
-from .commands import config_data_path, create_table, drop_table, delete_query, read, update, use
-=======
-from .commands import create_table, create_database, insert, delete, read, update, use
-
->>>>>>> 5313faf16d43237cef23d1f37ffe1a9d8bc6ac99
+from .commands import config_data_path, create_table, create_database, drop_table, delete_query, select, update, use
 
 def main():
     if len(sys.argv) < 2:
