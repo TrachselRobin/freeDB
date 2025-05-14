@@ -16,13 +16,10 @@ def main():
     command = sys.argv[1].lower()
     arg2 = sys.argv[2].lower()
     commands = {
-<<<<<<< HEAD
+        "insert": insert,
         "config": {
             "path": lambda: config_data_path(sys.argv[3])
         },
-=======
-        "insert": insert,
->>>>>>> 5313faf16d43237cef23d1f37ffe1a9d8bc6ac99
         "create": {
             # name is the next arg
             "table": lambda: create_table(sys.argv[3]) if len(sys.argv) > 3 else print("Missing table name."),

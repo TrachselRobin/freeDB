@@ -1,7 +1,7 @@
 # test/test_use.py
 import freedb as db
 
-def test_use_output(capsys):
+def test_use_output(capsys, tmp_path):
     data_dir = tmp_path / "temp_data"
     data_dir.mkdir()
     db_folder = data_dir / "test"
