@@ -1,5 +1,7 @@
 import sys
-from .commands import create_table, drop_table, read, update, use
+from _pyrepl.commands import delete
+
+from .commands import create_table, drop_table, delete_query, read, update, use
 
 def main():
     if len(sys.argv) < 2:
@@ -14,6 +16,7 @@ def main():
         },
         "delete": {
             "table": lambda: drop_table(arg2),
+            "query": lambda: delete_query(*sys.argv[2:(len(sys.argv)-1)]),
         },
         "read": read,
         "update": update,
