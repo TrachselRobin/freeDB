@@ -7,7 +7,6 @@ _current_db_path = None
 _current_data_path = None
 CONFIG_FILE = "freedb_config.json"
 
-<<<<<<< HEAD
 def _load_config():
     global _current_data_path
     if os.path.exists(CONFIG_FILE):
@@ -22,9 +21,6 @@ def _save_config():
         json.dump({"data_path": _current_data_path}, f)
 
 def set_current_db(db_name):
-=======
-def set_current_db(db_name, db_path):
->>>>>>> 5313faf16d43237cef23d1f37ffe1a9d8bc6ac99
     global _current_db, _current_db_path
     _current_db = db_name
     _current_db_path = f"{_current_data_path}/{db_name}"
