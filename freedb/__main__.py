@@ -1,21 +1,32 @@
 import sys
+<<<<<<< HEAD
 
 from .state import set_curent_data_path, get_current_data_path, get_current_db, get_current_db_path
 from .commands import config_data_path, create_table, drop_table, delete_query, read, update, use
+=======
+from .commands import create_table, create_database, insert, delete, read, update, use
+
+>>>>>>> 5313faf16d43237cef23d1f37ffe1a9d8bc6ac99
 
 def main():
     if len(sys.argv) < 2:
         print("Usage: python -m freedb <command> [args]")
         sys.exit(1)
-    
+
     command = sys.argv[1].lower()
     arg2 = sys.argv[2].lower()
     commands = {
+<<<<<<< HEAD
         "config": {
             "path": lambda: config_data_path(sys.argv[3])
         },
+=======
+        "insert": insert,
+>>>>>>> 5313faf16d43237cef23d1f37ffe1a9d8bc6ac99
         "create": {
-            "table": create_table,
+            # name is the next arg
+            "table": lambda: create_table(sys.argv[3]) if len(sys.argv) > 3 else print("Missing table name."),
+            "database": lambda: create_database(sys.argv[3]) if len(sys.argv) > 3 else print("Missing database name.")
         },
         "delete": {
             "table": lambda: drop_table(arg2),
@@ -33,6 +44,7 @@ def main():
             commands[command]()
     else:
         print(f"Unknown command: {command}")
+
 
 if __name__ == "__main__":
     main()

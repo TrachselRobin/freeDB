@@ -11,3 +11,4 @@ freedb.egg-info/
 *.egg-info
 *.whl
 *.log
+*.idea
