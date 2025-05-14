@@ -15,7 +15,7 @@ def main():
         "delete": delete,
         "read": read,
         "update": update,
-        "use": lambda: use(sys.argv[2])
+        "use": lambda: use(sys.argv[2], None if sys.argv[3] is None else sys.argv[3])
     }
 
     if command in commands:
