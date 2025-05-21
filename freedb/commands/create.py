@@ -28,7 +28,8 @@ def create_table(table_name):
         print(f"Fehler: Tabelle '{table_name}' existiert bereits.")
         return
 
-    header = input("Gib die Spaltennamen ein, durch Komma getrennt (z.B. id,name,age):\n").strip()
+    print("Gib die Spaltennamen ein, durch Komma getrennt (z.B. id,name,age): ")
+    header = str(input()).strip()
     columns = [col.strip() for col in header.split(',') if col.strip()]
 
     if not columns:
@@ -52,7 +53,8 @@ def insert():
         print("Fehler: Keine Datenbank ausgewählt.")
         return
 
-    table_name = input("Tabelle für Insert:\n").strip()
+    print("Tabelle für Insert: ")
+    table_name = str(input()).strip()
     structure_file = os.path.join(db_path, f"{db_name}.{table_name}.structure.csv")
     content_file = os.path.join(db_path, f"{db_name}.{table_name}.content.csv")
 
@@ -65,7 +67,8 @@ def insert():
         columns = next(reader)
 
     print(f"Spalten: {columns}")
-    values = input("Werte eingeben, durch Komma getrennt:\n").strip().split(',')
+    print("Werte eingeben, durch Komma getrennt: ")
+    values = str(input()).strip().split(',')
 
     if len(values) != len(columns):
         print("Fehler: Anzahl der Werte stimmt nicht mit der Anzahl der Spalten überein.")
