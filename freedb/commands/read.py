@@ -32,30 +32,31 @@ def select(query: list):
                 return
             output = []
             with open(table_file, "r") as file:
+                reader = csv.DictReader(file, delimiter=';')
+                output.append(";".join(reader.fieldnames))
+                
                 if "where" in [q.lower() for q in query]:
+                    file.seek(0)
+                    reader = csv.DictReader(file, delimiter=';')
                     where_index = [q.lower() for q in query].index("where")
                     condition = query[where_index + 1]
                     column, value = map(str.strip, condition.split("="))
                     column = column.lower()
                     value = value.lower()
-                    reader = csv.DictReader(file, delimiter=';')
-                    output.append(";".join(reader.fieldnames))
                     for row in reader:
-                        # Ensure case-insensitive comparison for column values
                         if row.get(column, "").lower() == value:
                             output.append(";".join(row[field].strip() for field in reader.fieldnames))
                 elif "like" in [q.lower() for q in query]:
+                    file.seek(0)
+                    reader = csv.DictReader(file, delimiter=';')
                     like_index = [q.lower() for q in query].index("like")
                     pattern = query[like_index + 1].strip("'").strip('"').lower()
-                    reader = csv.DictReader(file, delimiter=';')
-                    output.append(";".join(reader.fieldnames))
                     for row in reader:
                         if any(pattern in cell.lower() for cell in row.values()):
                             output.append(";".join(row[field].strip() for field in reader.fieldnames))
                 else:
-                    reader = csv.reader(file, delimiter=';')
                     for row in reader:
-                        output.append(";".join(row))
+                        output.append(";".join(row[field].strip() for field in reader.fieldnames))
             print("\n".join(output))
 
         else:

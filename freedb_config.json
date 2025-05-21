@@ -1,1 +1,1 @@
-{"data_path": "%USERPROFILE%\\AppData\\Local\\Temp\\freeDB_test"}
+{"data_path": "%TEMP%\\freeDB\\data", "current_db": "test"}
