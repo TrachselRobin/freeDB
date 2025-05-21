@@ -12,3 +12,4 @@ freedb.egg-info/
 *.whl
 *.log
 *.idea
+*.venv
