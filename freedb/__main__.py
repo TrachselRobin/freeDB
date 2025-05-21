@@ -16,7 +16,9 @@ def main():
             "path": lambda: config_data_path(sys.argv[3])
         },
         "create": {
-            "table": lambda: create_table(sys.argv[3]) if len(sys.argv) > 3 else print("Missing table name."),
+            "table": lambda: create_table(sys.argv[3], sys.argv[5:])
+                if len(sys.argv) > 4 and sys.argv[4].lower() == "columns"
+                else create_table(sys.argv[3]),
             "database": lambda: create_database(sys.argv[3]) if len(sys.argv) > 3 else print("Missing database name."),
             "db": lambda: create_database(sys.argv[3]) if len(sys.argv) > 3 else print("Missing database name."),
         },
@@ -24,7 +26,7 @@ def main():
             "table": lambda: drop_table(arg2),
             "query": lambda: delete_query(*sys.argv[2:]),
         },
-        "insert": insert,
+        "insert": lambda: insert(sys.argv[2:]),
         "read": select,
         "update": update,
         "use": lambda: use(sys.argv[2], None if len(sys.argv) <= 3 else sys.argv[3]),
