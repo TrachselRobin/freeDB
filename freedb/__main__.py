@@ -15,7 +15,6 @@ def main():
             "path": lambda: config_data_path(sys.argv[3])
         },
         "create": {
-            # name is the next arg
             "table": lambda: create_table(sys.argv[3]) if len(sys.argv) > 3 else print("Missing table name."),
             "database": lambda: create_database(sys.argv[3]) if len(sys.argv) > 3 else print("Missing database name.")
         },
