@@ -1,7 +1,7 @@
 import sys
 
 from .state import set_current_data_path, get_current_data_path, get_current_db, get_current_db_path
-from .commands import config_data_path, create_table, create_database, insert, drop_table, delete_query, select, update, use
+from .commands import config_data_path, create_table, create_database, insert, drop_table, delete_query, select, update, alter_add_column, use
 
 
 def main():
@@ -28,7 +28,7 @@ def main():
         },
         "insert": lambda: insert(sys.argv[2:]),
         "read": select,
-        "update": update,
+        "update": lambda: update(sys.argv[2:]),
         "use": lambda: use(sys.argv[2], None if len(sys.argv) <= 3 else sys.argv[3]),
     }
 
