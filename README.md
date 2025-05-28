@@ -1,7 +1,7 @@
 
 <div align="center" style="line-height: 1;">
   <a href="https://github.com/x47base/ch-finance-engine/" style="margin: 2px;">
-    <img alt="Code License" src="https://img.shields.io/badge/Release_Version-V0.1.3-green" style="display: inline-block; vertical-align: middle;"/>
+    <img alt="Code License" src="https://img.shields.io/badge/Release_Version-V0.1.4-green" style="display: inline-block; vertical-align: middle;"/>
   </a>
   <a href="https://github.com/x47base/ch-finance-engine/blob/main/LICENSE" style="margin: 2px;">
     <img alt="Code License" src="https://img.shields.io/badge/Code_License-GPL_v3_License-blue" style="display: inline-block; vertical-align: middle;"/>
@@ -30,21 +30,32 @@ WIP
 
 ```
 📦 project-root/
- ┣ 📜 index.html
  ┣ 📁 docs/
  ┃ ┣ 📜 README.md
  ┣ 📁 freedb/
- ┃ ┣ 📜 __main__.py
  ┃ ┣ 📁 commands/
+ ┃ ┃ ┣ 📜 __init__.py
+ ┃ ┃ ┣ 📜 config.py
  ┃ ┃ ┣ 📜 create.py
  ┃ ┃ ┣ 📜 delete.py
  ┃ ┃ ┣ 📜 read.py
  ┃ ┃ ┣ 📜 update.py
+ ┃ ┃ ┣ 📜 use.py
+ ┃ ┣ 📜 __init__.py
+ ┃ ┣ 📜 __main__.py
  ┃ ┣ 📜 utils.py
+ ┣ 📁 test/
+ ┃ ┣ 📜 test_config.py
+ ┃ ┣ 📜 test_create.py
+ ┃ ┣ 📜 test_read.py
+ ┃ ┣ 📜 test_update.py
+ ┃ ┣ 📜 test_use.py
  ┣ 📜 .gitignore
  ┣ 📜 LICENSE
  ┣ 📜 NOTICE
  ┣ 📜 README.md
+ ┣ 📜 requirements.md
+ ┣ 📜 setup.py
 ```
 
 ---
