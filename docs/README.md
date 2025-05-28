@@ -22,8 +22,22 @@
 
 ### Installation
 
+To install FreeDB using local project version: 
+
 ```bash
 pip install .
+```
+
+Or, to install FreeDB using pip, run:
+
+```bash
+pip install freedb
+```
+
+Or, to install directly from the repository:
+
+```bash
+pip install git+https://github.com/TrachselRobin/freeDB.git
 ```
 
 ### CLI Usage

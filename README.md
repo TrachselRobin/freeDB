@@ -22,7 +22,17 @@
 
 ## Install Package
 
-WIP
+To install FreeDB using pip, run:
+
+```bash
+pip install freedb
+```
+
+Or, to install directly from the repository:
+
+```bash
+pip install git+https://github.com/TrachselRobin/freeDB.git
+```
 
 ---
 
