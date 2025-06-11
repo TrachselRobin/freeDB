@@ -27,7 +27,7 @@ def main():
             "query": lambda: delete_query(*sys.argv[2:]),
         },
         "insert": lambda: insert(sys.argv[2:]),
-        "read": select,
+        "read": lambda: select(sys.argv[2:]),
         "update": lambda: update(sys.argv[2:]),
         "use": lambda: use(sys.argv[2], None if len(sys.argv) <= 3 else sys.argv[3]),
     }
