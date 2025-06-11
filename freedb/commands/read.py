@@ -14,7 +14,6 @@ def select(query: list):
         return
 
     try:
-        # Handle COUNT(*)
         if len(query) >= 4 and query[0].lower() == "select" and query[1].lower() == "count(*)" and query[2].lower() == "from":
             table_name = query[3].lower()
             table_file = os.path.join(db_path, f"{db_name}.{table_name}.content.csv")
@@ -26,7 +25,6 @@ def select(query: list):
             print(f"Row count: {row_count}")
             return
 
-        # Handle SELECT *
         if len(query) >= 4 and query[0].lower() == "select" and query[1] == "*" and query[2].lower() == "from":
             table_name = query[3].lower()
             table_file = os.path.join(db_path, f"{db_name}.{table_name}.content.csv")
@@ -37,15 +35,12 @@ def select(query: list):
             with open(table_file, "r", newline='') as file:
                 reader = csv.DictReader(file)  # default delimiter=','
                 output = []
-                # Header row
                 output.append(','.join(reader.fieldnames))
 
-                # Prepare queries
                 lower_q = [q.lower() for q in query]
                 file.seek(0)
                 reader = csv.DictReader(file)
 
-                # WHERE clause
                 if "where" in lower_q:
                     where_idx = lower_q.index("where")
                     if where_idx + 1 < len(query):
@@ -57,7 +52,7 @@ def select(query: list):
                             for row in reader:
                                 if row.get(column, "").lower() == value:
                                     output.append(','.join(row[field].strip() for field in reader.fieldnames))
-                # LIKE clause
+
                 elif "like" in lower_q:
                     like_idx = lower_q.index("like")
                     if like_idx + 1 < len(query):
@@ -65,7 +60,7 @@ def select(query: list):
                         for row in reader:
                             if any(pattern in cell.lower() for cell in row.values()):
                                 output.append(','.join(row[field].strip() for field in reader.fieldnames))
-                # No filter
+
                 else:
                     for row in reader:
                         output.append(','.join(row[field].strip() for field in reader.fieldnames))
